@@ -24,7 +24,7 @@ echo "Date: $date!" > $outputDir/dbinfo.txt
 echo "Data size: $size" >> $outputDir/dbinfo.txt
 
 cd $outputDir
-sudo tar -zcPf ./etc_$date.tar.gz $backupDir dbinfo.txt
+sudo tar -zcPf ./etc_$date.tar.gz $backupDir dbinfo.txt &>/dev/null
 rm -rf dbinfo.txt
 
 
