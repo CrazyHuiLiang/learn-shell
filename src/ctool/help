@@ -6,7 +6,7 @@ c语言文件生成工具
 $ ctool a.c
 
 指令
-create 创建文件
+create/c 创建文件
 init 格式化文件
-debug 调试
+debug/d 调试
 

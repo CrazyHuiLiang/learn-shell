@@ -43,21 +43,32 @@ gdbFile () {
   gdb "a.out"
 }
 
+createAction () {
+  createFile
+  if [ $? -eq 0 ]
+    then
+    initFile
+    editFile
+  fi
+}
+
 dispatchAction () {
   case $action in
     "create")
-      createFile
-      if [ $? -eq 0 ]
-        then
-        initFile
-        editFile
-      fi
+      createAction
+    ;;
+    "c")
+      createAction
     ;;
     "init")
       initFile
       editFile
     ;;
     "debug")
+      compileFile
+      gdbFile
+    ;;
+    "d")
       compileFile
       gdbFile
     ;;
